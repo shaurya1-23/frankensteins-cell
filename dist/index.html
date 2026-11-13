@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#141315">
+<meta name="description" content="Explore seven stops in Victor Frankenstein’s laboratory.">
+<title>Victor’s Workshop</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main id="experience">
+  <canvas id="view" aria-label="3D view of Victor’s workshop"></canvas>
+  <div class="vignette" aria-hidden="true"></div>
+  <header class="top">
+    <h1>Victor’s Workshop</h1>
+    <button id="key-button" class="key-button" type="button" aria-haspopup="dialog"><span aria-hidden="true">¶</span> Map key</button>
+  </header>
+  <div id="markers" class="markers" aria-label="Stops in the room"></div>
+  <section id="stop-note" class="stop-note" aria-labelledby="note-title" aria-live="polite" hidden>
+    <div class="note-heading"><span id="note-number"></span><h2 id="note-title"></h2><button id="close-note" class="close" type="button" aria-label="Close note">×</button></div>
+    <blockquote id="note-quote"></blockquote>
+    <p id="note-text"></p>
+  </section>
+  <div id="failure" class="failure" hidden><p>The 3D view couldn’t load.</p><button id="fallback-key" type="button">Open the map key</button></div>
+  <footer class="hud">
+    <nav id="navigation" class="navigation" aria-label="Workshop stops">
+      <button id="overview" type="button" aria-pressed="true">Overhead</button>
+      <div id="stop-buttons" class="stop-buttons"></div>
+    </nav>
+    <div id="view-tools" class="view-tools" aria-label="Overhead view controls">
+      <button id="zoom-out" type="button" aria-label="Zoom out">−</button>
+      <button id="zoom-in" type="button" aria-label="Zoom in">+</button>
+      <button id="rotate-view" type="button" aria-label="Rotate overhead view" title="Rotate view">↻</button>
+    </div>
+    <p id="look-hint" class="look-hint">Drag to pan · Scroll to zoom · Shift-drag to orbit</p>
+  </footer>
+  <div id="view-cut" class="view-cut" aria-hidden="true"></div>
+</main>
+<dialog id="evidence-dialog" aria-labelledby="dialog-title">
+  <div class="dialog-top"><h2 id="dialog-title">Map key</h2><button id="close-dialog" class="close" type="button" aria-label="Close map key">×</button></div>
+  <div id="dialog-body" class="dialog-body"></div>
+</dialog>
+<script type="module" src="app.js"></script>
+</body>
+</html>
